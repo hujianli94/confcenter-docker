@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-foruda.fullname" . }}
+  labels:
+    {{- include "gitee-foruda.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-foruda.servicePortName" . }}
+    - port: 22000
+      targetPort: 22000
+      nodePort: 33220
+      protocol: TCP
+      name: tracker
+  selector:
+    {{- include "gitee-foruda.selectorLabels" . | nindent 4 }}

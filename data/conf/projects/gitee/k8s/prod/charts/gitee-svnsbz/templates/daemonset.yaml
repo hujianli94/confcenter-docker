@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "gitee-svnsbz.fullname" . }}
+  labels:
+    {{- include "gitee-svnsbz.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .Values.replicaCount }}
+      maxUnavailable: 0
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "gitee-svnsbz.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "gitee-svnsbz.selectorLabels" . | nindent 8 }}
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            {{- include "gitee-svnsbz.selectorLabels" . | nindent 12 }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "gitee-svnsbz.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: {{ .Values.service.portName }}
+              containerPort: {{ .Values.service.target }}
+              protocol: {{ .Values.service.protocol }}
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.service.target }}
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.service.target }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: svnsbz-entrypoint-sh
+            mountPath: /entrypoint.sh
+            subPath: entrypoint.sh
+          - name: svnsbz-logs
+            mountPath: /home/git/oscbin/svnsbz/logs
+        - name: filebeat
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: hub.gitee.com/elastic/filebeat:7.13.3
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - name: svnsbz-filebeat-yml
+            mountPath: /usr/share/filebeat/filebeat.yml
+            subPath: filebeat.yml
+          - name: svnsbz-logs
+            mountPath: /data/logs
+      volumes:
+      - name: svnsbz-entrypoint-sh
+        configMap:
+          name: svnsbz-entrypoint-sh
+          defaultMode: 0755
+      - name: svnsbz-logs
+        emptyDir: {}
+      - name: svnsbz-filebeat-yml
+        configMap:
+          name: svnsbz-filebeat-yml
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

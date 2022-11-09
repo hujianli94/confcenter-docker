@@ -1,0 +1,52 @@
+---
+version: '3.9'
+
+services:
+  code:
+    image: hub.gitee.com/autom-studio/code-server:4.4.0
+    restart: unless-stopped
+    command: --disable-telemetry --disable-update-check --disable-file-downloads --bind-addr 0.0.0.0:8080
+    volumes:
+      - confdata:/home/coder
+    networks:
+      - default
+      - proxy
+
+  webdavd-conf:
+    image: hub.gitee.com/autom-studio/webdavd:v0.0.2
+    restart: unless-stopped
+    volumes:
+      - ./conf/webdavd-conf.yaml:/app/webdavd.yaml
+      - confdata:/data:ro
+    networks:
+      - default
+      - proxy
+
+  webdavd-share:
+    image: hub.gitee.com/autom-studio/webdavd:v0.0.2
+    restart: unless-stopped
+    volumes:
+      - ./conf/webdavd-share.yaml:/app/webdavd.yaml
+      - sharedata:/data
+    networks:
+      - default
+      - proxy
+
+volumes:
+  confdata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: $PWD/data/conf
+  sharedata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: $PWD/data/share
+
+networks:
+  proxy:
+    external: true
+    name: nginx_proxy

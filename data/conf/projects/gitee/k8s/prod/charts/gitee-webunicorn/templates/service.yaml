@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-webunicorn.fullname" . }}
+  labels:
+    {{- include "gitee-webunicorn.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-webunicorn.servicePortName" . }}
+    - port: 8083
+      targetPort: 8083
+      nodePort: 32883
+      protocol: TCP
+      name: webunicornmetrics
+  selector:
+    {{- include "gitee-webunicorn.selectorLabels" . | nindent 4 }}

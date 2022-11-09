@@ -1,0 +1,15 @@
+[2022-10-31 07:53:42.892] [exthost] [info] Extension host with pid 108 started
+[2022-10-31 07:53:42.897] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Lock acquired.
+[2022-10-31 07:53:42.973] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-10-31 07:53:42.978] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-10-31 07:53:42.981] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-10-31 07:53:43.045] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-10-31 07:53:43.109] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-10-31 07:53:43.166] [exthost] [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.commandsToLog', provide the URI of a resource or 'null' for any resource.
+[2022-10-31 07:53:43.179] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-31 07:53:43.195] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-31 07:53:43.198] [exthost] [info] Eager extensions activated
+[2022-10-31 07:53:43.253] [exthost] [warning] [vscode.emmet] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'emmet.includeLanguages', provide the URI of a resource or 'null' for any resource.
+[2022-10-31 08:53:09.385] [exthost] [info] extension host terminating: received terminate message from renderer
+[2022-10-31 08:53:09.386] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-10-31 08:53:09.394] [exthost] [info] Extension host with pid 108 exiting with code 0

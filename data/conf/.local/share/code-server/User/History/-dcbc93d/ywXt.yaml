@@ -1,0 +1,87 @@
+apiVersion: v1
+data:
+  supervisord.conf: |
+    [supervisord]
+    nodaemon=true
+    pidfile=/home/git/supervisord.pid
+    # logfile=/home/git/supervisord.log
+    logfile=/dev/stdout
+    logfile_maxbytes=0
+
+    [program:wgethaproxycfg]
+    command=wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/share/conf/haproxy/ -P /etc/haproxy
+    exitcodes=0
+    startretries=0
+    priority=7
+
+    [program:wgetgpgkey]
+    command=wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/share/conf/gnupg/gpgpri/ -P /home/git/gpgpri
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=8
+
+    [program:cron]
+    command=service cron start
+    exitcodes=0
+    startretries=0
+    priority=9
+
+    [program:haproxy]
+    command=bash -c 'until [ -f /home/git/getconfigfinished ]; do echo "waiting for get config"; sleep 1; done; service haproxy start'
+    exitcodes=0
+    startretries=0
+    priority=10
+
+    [program:wgetconfig]
+    command=bash -c 'wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/prod/conf/unicorn/ -P /home/git/gitee/config && touch /home/git/getconfigfinished'
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=19
+
+    [program:modifyconfig]
+    command=bash -c 'until [ -f /home/git/getconfigfinished ]; do echo "waiting for get config"; sleep 1; done; grep -lr placeholder_namespace /home/git/gitee/config|xargs -I {} sed -i "s#placeholder_namespace#{{ .Release.Namespace }}#g" {} && touch /home/git/modifyconfigfinished'
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=29
+
+    [program:assetsmanifest]
+    command=wget -q --http-user=webdav --http-password=123123 https://webdavd.autom.studio/share/gitee/k8s/share/manifest/{{ .Values.manifestVersion }}-manifest-d8310205fff054f1abd8d180e29eb14d.json -O /home/git/gitee/public/assets/manifest-d8310205fff054f1abd8d180e29eb14d.json
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=39
+
+    [program:webpacksmanifest]
+    command=wget -q --http-user=webdav --http-password=123123 https://webdavd.autom.studio/share/gitee/k8s/share/manifest/{{ .Values.manifestVersion }}-manifest.json -O /home/git/gitee/public/webpacks/manifest.json
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=49
+
+    [program:unicorn]
+    exitcodes=0
+    startretries=0
+    directory=/home/git/gitee
+    environment=HOME=/home/git,BUNDLE_APP_CONFIG=/usr/local/bundle,GEM_HOME=/usr/local/bundle,PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    command=bash -c 'until [ -f /home/git/modifyconfigfinished ]; do echo "waiting for modify config"; sleep 1; done; bundle exec unicorn -E production -c /home/git/gitee/config/unicorn.rb'
+    user=git
+    stdout_logfile=/home/git/unicorn.log
+    redirect_stderr=true
+    priority=59
+
+    [program:graphqlmetrics]
+    exitcodes=0
+    startretries=0
+    directory=/home/git/gitee
+    environment=HOME=/home/git,BUNDLE_APP_CONFIG=/usr/local/bundle,GEM_HOME=/usr/local/bundle,PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    command=bash -c 'until [ -f /home/git/modifyconfigfinished ]; do echo "waiting for modify config"; sleep 1; done; bundle exec prometheus_exporter -a lib/graphql_collector.rb -b 0.0.0.0'
+    user=git
+    stdout_logfile=/home/git/graphqlmetrics.log
+    redirect_stderr=true
+    priority=69
+kind: ConfigMap
+metadata:
+  name: authunicorn-supervisord-conf

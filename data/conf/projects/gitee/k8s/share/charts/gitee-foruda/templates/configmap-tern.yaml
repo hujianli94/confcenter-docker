@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  tern.conf: |
+    [database]
+    host = 10.0.64.101
+    port = 5000
+    database = foruda
+    user = gitee_foruda
+    password = p45wT8HiS1Yk
+    sslmode = prefer
+kind: ConfigMap
+metadata:
+  name: foruda-tern-conf

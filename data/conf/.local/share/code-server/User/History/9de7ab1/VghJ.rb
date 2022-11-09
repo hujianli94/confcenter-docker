@@ -1,0 +1,98 @@
+# uncomment and customize to run in non-root path
+# note that config/gitee.yml web path should also be changed
+# ENV['RAILS_RELATIVE_URL_ROOT'] = "/gitee"
+
+app_dir = File.expand_path '../../', __FILE__
+worker_processes 8
+working_directory app_dir
+
+# Load app into the master before forking workers for super-fast
+# worker spawn times
+preload_app true
+
+# nuke workers after 30 seconds (60 is the default)
+timeout 120
+
+# listen on a Unix domain socket and/or a TCP port,
+
+#listen 8080 # listen to port 8080 on all TCP interfaces
+listen "0.0.0.0:3000"  # listen to port 8080 on the loopback interface
+#listen "#{app_dir}/tmp/sockets/gitee.socket"
+
+pid "#{app_dir}/tmp/pids/unicorn.pid"
+stderr_path "#{app_dir}/log/unicorn.stderr.log"
+stdout_path "#{app_dir}/log/unicorn.stdout.log"
+
+# http://www.rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
+if GC.respond_to?(:copy_on_write_friendly=)
+  GC.copy_on_write_friendly = true
+end
+
+require_relative "#{app_dir}/lib/gitee/cluster/lifecycle_events"
+
+before_exec do |server|
+  # Signal application hooks that we're about to restart
+  Gitee::Cluster::LifecycleEvents.do_before_master_restart
+end
+
+run_once = true
+
+before_fork do |server, worker|
+  if run_once
+    # There is a difference between Puma and Unicorn:
+    # - Puma calls before_fork once when booting up master process
+    # - Unicorn runs before_fork whenever new work is spawned
+    # To unify this behavior we call before_fork only once (we use
+    # this callback for deleting Prometheus files so for our purposes
+    # it makes sense to align behavior with Puma)
+    run_once = false
+
+    # Signal application hooks that we're about to fork
+    Gitee::Cluster::LifecycleEvents.do_before_fork
+  end
+
+  # the following is highly recommended for Rails + "preload_app true"
+  # as there's no need for the master process to hold a connection
+  #defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+
+  if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.connection.disconnect!
+    ActiveRecord::Base.connection.clear_all_connections! if ActiveRecord::Base.connection.respond_to?(:clear_all_connections!)
+  end
+  ##
+  # When sent a USR2, Unicorn will suffix its pidfile with .oldbin and
+  # immediately start loading up a new version of itself (loaded with a new
+  # version of our app). When this new Unicorn is completely loaded
+  # it will begin spawning workers. The first worker spawned will check to
+  # see if an .oldbin pidfile exists. If so, this means we've just booted up
+  # a new Unicorn and need to tell the old one that it can now die. To do so
+  # we send it a QUIT.
+  #
+  # Using this method we get 0 downtime deploys.
+
+  old_pid = "#{server.config[:pid]}.oldbin"
+
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+      Process.kill(sig, File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
+    end
+  end
+end
+
+after_fork do |server, worker|
+  # Signal application hooks of worker start
+  Gitee::Cluster::LifecycleEvents.do_worker_start
+
+  # Unicorn master loads the app then forks off workers - because of the way
+  # Unix forking works, we need to make sure we aren't using any of the parent's
+  # sockets, e.g. db connection
+
+  if defined?(ActiveRecord::Base)
+    ActiveRecord::Base.establish_connection
+  end
+  # Redis and Memcached would go here but their connections are established
+  # on demand, so the master never opens a socket
+end

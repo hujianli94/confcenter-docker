@@ -1,0 +1,47 @@
+apiVersion: v1
+data:
+  filebeat.yml: |
+    filebeat.inputs:
+    - type: log
+      enabled: true
+      paths:
+        - /data/logs/*.log
+      fields:
+        log_topic: front-nginx-log
+
+    filebeat.config.modules:
+      path: ${path.config}/modules.d/*.yml
+      reload.enabled: false
+
+    processors:
+      - rename:
+          fields:
+            - from: "agent"
+              to: "beat"
+          ignore_missing: true
+          fail_on_error: false
+
+    setup.template.enabled: false
+
+    setup.kibana:
+
+    output.kafka:
+      enable: true
+      hosts: ["kafka-efk-0.kafka-efk-headless.pub-comm.svc.cluster.local:9092"]
+      topic: '%{[fields.log_topic]}'
+      partition.hash:
+        reachable_only: true
+        compression: gzip
+        max_message_bytes: 1000000
+        required_acks: 1
+
+    logging.level: info
+    logging.to_files: true
+    logging.files:
+      path: filebeat
+      name: filebeat.log
+      keepfiles: 7
+      permissions: 0644
+kind: ConfigMap
+metadata:
+  name: assets-filebeat-yml

@@ -1,0 +1,56 @@
+apiVersion: v1
+data:
+  config.praefect.toml: |
+    listen_addr = "0.0.0.0:9999"
+    prometheus_listen_addr = "0.0.0.0:9236"
+
+    [database]
+    host = '172.18.0.39'
+    port = 5000
+    user = 'gitee'
+    password = '123123'
+    dbname = 'praefect'
+    sslmode = 'prefer'
+    max_open_conns = 200
+    max_idle_conns = 20
+
+    [logging]
+    level = "info"
+
+    [replication]
+    batch_size = 30
+
+    [reconciliation]
+    scheduling_interval = '5m'
+
+    [failover]
+    enabled = true
+
+    [[virtual_storage]]
+    name = 's01-praefect-pub-gitee'
+
+    [[virtual_storage.node]]
+    storage = "172.18.0.35"
+    address = "tcp://172.18.0.35:9999"
+    token = ''
+
+    [[virtual_storage.node]]
+    storage = '172.18.0.42'
+    address = 'tcp://172.18.0.42:9999'
+    token = ''
+
+    [[virtual_storage]]
+    name = 's02-praefect-pub-gitee'
+
+    [[virtual_storage.node]]
+    storage = "172.18.0.41"
+    address = "tcp://172.18.0.41:9999"
+    token = ''
+
+    [[virtual_storage.node]]
+    storage = '172.18.0.40'
+    address = 'tcp://172.18.0.40:9999'
+    token = ''
+kind: ConfigMap
+metadata:
+  name: praefect-config-toml

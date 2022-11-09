@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "gitee-giteecron.fullname" . }}
+  labels:
+    {{- include "gitee-giteecron.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "gitee-giteecron.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "gitee-giteecron.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "gitee-giteecron.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: giteecron-supervisord-conf
+            mountPath: /home/git/supervisord.conf
+            subPath: supervisord.conf
+          - name: giteecron-logs
+            mountPath: /home/git/gitee/log
+          - name: giteecron-out
+            mountPath: /tmp/out
+        - name: filebeat
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: hub.gitee.com/elastic/filebeat:7.13.3
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+          - name: giteecron-gitee-filebeat-yml
+            mountPath: /usr/share/filebeat/filebeat.yml
+            subPath: filebeat.yml
+          - name: giteecron-logs
+            mountPath: /data/logs
+      volumes:
+      - name: giteecron-supervisord-conf
+        configMap:
+          name: giteecron-supervisord-conf
+      - name: giteecron-logs
+        emptyDir: {}
+      - name: giteecron-out
+        hostPath:
+          path: /data/cronout
+          type: Directory
+      - name: giteecron-gitee-filebeat-yml
+        configMap:
+          name: giteecron-gitee-filebeat-yml
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

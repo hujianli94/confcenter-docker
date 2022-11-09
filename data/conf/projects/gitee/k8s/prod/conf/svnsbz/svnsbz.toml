@@ -1,0 +1,33 @@
+# svnsbz.toml
+[Title]
+Description="Subversion Dynamic Proxy - svnsbz"
+Last="2018-09-04"
+Author="Force.Charlie"
+
+[Filter]
+Blackholelist="blacklist.txt"
+
+[App]
+AllowSlave=true
+PID="run/svnsbz.pid"
+Access="logs/svnsbz.access.log"
+Error="logs/svnsbz.error.log"
+AuthServer="http://authunicorn.placeholder_namespace:3000/"
+InternalToken='f2ac95a7-c927-432e-9250-be1b74e1e5b4'
+
+[Server]
+Address="0.0.0.0"
+ThreadSize=16
+#### by default , backend Generate a cache takes a long time
+Bktimeout=240
+Clienttimeout=120
+Lifetime=1800
+Port=3690
+TlsPort=3691 # TLS port
+TlsVerifyFile="server.pem"
+TlsVerifyKey="server.key"
+
+UpstreamPort=3690
+BalanceSession=16
+Domain="gitee.co"
+DomainFilter=false

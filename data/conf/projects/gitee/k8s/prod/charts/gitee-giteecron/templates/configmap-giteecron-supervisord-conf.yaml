@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  supervisord.conf: |
+    [supervisord]
+    nodaemon=true
+    pidfile=/home/git/supervisord.pid
+    # logfile=/home/git/supervisord.log
+    logfile=/dev/stdout
+    logfile_maxbytes=0
+
+    [program:haproxy]
+    command=bash -c 'wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/share/conf/haproxy/ -P /etc/haproxy && service haproxy start'
+    exitcodes=0
+    startretries=0
+    priority=5
+
+    [program:cron]
+    command=bash -c 'wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/share/conf/cron/ -P /etc/ && chmod 644 /etc/crontab && service cron start'
+    exitcodes=0
+    startretries=0
+    priority=6
+
+    [program:wgetgpgkey]
+    command=wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/share/conf/gnupg/gpgpri/ -P /home/git/gpgpri
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=8
+
+    [program:wgetconfig]
+    command=bash -c 'wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/prod/conf/unicorn/ -P /home/git/gitee/config && touch /home/git/getconfigfinished'
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=19
+
+    [program:modifyconfig]
+    command=bash -c 'until [ -f /home/git/getconfigfinished ]; do echo "waiting for get config"; sleep 1; done; grep -lr placeholder_namespace /home/git/gitee/config|xargs -I {} sed -i "s#placeholder_namespace#{{ .Release.Namespace }}#g" {}'
+    exitcodes=0
+    startretries=0
+    user=git
+    priority=29
+kind: ConfigMap
+metadata:
+  name: giteecron-supervisord-conf

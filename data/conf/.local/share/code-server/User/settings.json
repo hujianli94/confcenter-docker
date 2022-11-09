@@ -1,0 +1,22 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.dragAndDrop": false,
+    "explorer.enableDragAndDrop": false,
+    "editor.renderWhitespace": "all",
+    "workbench.list.openMode": "doubleClick",
+    "extensions.ignoreRecommendations": true,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "editor.fontSize": 16,
+    "files.trimFinalNewlines": true,
+    "editor.detectIndentation": false,
+    "workbench.tree.expandMode": "doubleClick",
+    "telemetry.telemetryLevel": "off",
+    "window.menuBarVisibility": "toggle",
+    "files.autoSave": "off",
+    "window.openFoldersInNewWindow": "on",
+    "window.openFilesInNewWindow": "default",
+    "workbench.editor.restoreViewState": false,
+    "diffEditor.ignoreTrimWhitespace": false
+}

@@ -1,0 +1,18 @@
+[2022-11-07 02:26:11.421] [exthost] [info] Extension host with pid 893 started
+[2022-11-07 02:26:11.428] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/766c5a0e/vscode.lock': Lock acquired.
+[2022-11-07 02:26:11.556] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-11-07 02:26:11.563] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-11-07 02:26:11.568] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-11-07 02:26:11.688] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-11-07 02:26:11.790] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-11-07 02:26:11.877] [exthost] [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.commandsToLog', provide the URI of a resource or 'null' for any resource.
+[2022-11-07 02:26:11.898] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-07 02:26:11.922] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-07 02:26:11.928] [exthost] [info] Eager extensions activated
+[2022-11-07 02:26:12.018] [exthost] [warning] [vscode.emmet] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'emmet.includeLanguages', provide the URI of a resource or 'null' for any resource.
+[2022-11-07 02:26:43.343] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+[2022-11-07 02:26:43.366] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+[2022-11-07 02:26:43.862] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+[2022-11-07 11:04:28.618] [exthost] [info] extension host terminating: received terminate message from renderer
+[2022-11-07 11:04:28.620] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/766c5a0e/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-11-07 11:04:28.631] [exthost] [info] Extension host with pid 893 exiting with code 0

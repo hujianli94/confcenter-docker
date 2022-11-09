@@ -1,0 +1,15 @@
+[2022-11-09 02:26:26.581] [exthost] [info] Extension host with pid 1229 started
+[2022-11-09 02:26:26.588] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7/vscode.lock': Lock acquired.
+[2022-11-09 02:26:26.683] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-11-09 02:26:26.688] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-11-09 02:26:26.691] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-11-09 02:26:27.235] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-11-09 02:26:27.309] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-11-09 02:26:27.610] [exthost] [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.commandsToLog', provide the URI of a resource or 'null' for any resource.
+[2022-11-09 02:26:27.624] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-09 02:26:27.641] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-09 02:26:27.645] [exthost] [info] Eager extensions activated
+[2022-11-09 02:26:27.744] [exthost] [warning] [vscode.emmet] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'emmet.includeLanguages', provide the URI of a resource or 'null' for any resource.
+[2022-11-09 09:40:04.693] [exthost] [info] extension host terminating: renderer disconnected for too long (2)
+[2022-11-09 09:40:04.694] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-11-09 09:40:04.700] [exthost] [info] Extension host with pid 1229 exiting with code 0

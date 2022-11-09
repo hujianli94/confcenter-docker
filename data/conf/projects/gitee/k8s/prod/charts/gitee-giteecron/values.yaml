@@ -1,0 +1,84 @@
+# Default values for gitee-giteecron.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: hub.gitee.com/gitee/gitee
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "60d025b"
+
+createImagePullSecret:
+  enabled: true
+  name: gitee
+imageCredentials:
+  registry: hub.gitee.com
+  username: gitee
+  password: OSChina@2022
+  email: 1879324764@qq.com
+imagePullSecrets:
+  - name: gitee
+
+nameOverride: "giteecron"
+fullnameOverride: "giteecron"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+  fsGroup: 1000
+  # sysctls:
+  # - name: "net.ipv4.tcp_keepalive_intvl"
+  #   value: "30"
+  # - name: "net.ipv4.tcp_keepalive_probes"
+  #   value: "3"
+  # - name: "net.ipv4.tcp_keepalive_time"
+  #   value: "180"
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 4
+    memory: 16Gi
+  requests:
+    cpu: 4
+    memory: 16Gi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector:
+  node_role: giteeCron
+
+tolerations:
+  - key: GiteeCronOnly
+    operator: "Equal"
+    value: "yes"
+    effect: "NoSchedule"
+
+affinity: {}

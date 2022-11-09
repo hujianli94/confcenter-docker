@@ -1,0 +1,277 @@
+[2022-11-02 03:51:58.590] [remoteagent] [info] 
+
+
+
+
+[2022-11-02 03:51:58.590] [remoteagent] [info] Extension host agent started.
+[2022-11-02 03:51:58.681] [remoteagent] [error] [172.20.0.5][f1e86a48][ManagementConnection] Unknown reconnection token (never seen).
+[2022-11-02 03:51:58.804] [remoteagent] [error] [172.20.0.5][d5905a48][ExtensionHostConnection] Unknown reconnection token (never seen).
+[2022-11-02 04:20:16.023] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] New connection established.
+[2022-11-02 04:20:17.035] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] New connection established.
+[2022-11-02 04:20:17.044] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] <63> Launched Extension Host Process.
+[2022-11-02 04:51:00.911] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 04:51:01.047] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 05:07:54.812] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 05:23:47.643] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 05:23:47.643] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 05:23:56.824] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 05:26:07.146] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 05:26:07.279] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 05:29:59.976] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 05:55:37.867] [remoteagent] [info] [172.20.0.5][8894f638][ManagementConnection] New connection established.
+[2022-11-02 05:55:39.137] [remoteagent] [info] [172.20.0.5][3d8a4fed][ExtensionHostConnection] New connection established.
+[2022-11-02 05:55:39.145] [remoteagent] [info] [172.20.0.5][3d8a4fed][ExtensionHostConnection] <95> Launched Extension Host Process.
+[2022-11-02 05:55:39.303] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 28
+[2022-11-02 05:55:40.042] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 29
+[2022-11-02 05:55:40.277] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 30
+[2022-11-02 05:55:40.542] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 31
+[2022-11-02 05:55:40.559] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 32
+[2022-11-02 05:55:40.567] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 33
+[2022-11-02 05:55:40.569] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 34
+[2022-11-02 05:55:40.569] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 35
+[2022-11-02 05:55:40.570] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 36
+[2022-11-02 05:55:59.784] [remoteagent] [info] [172.20.0.5][8894f638][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-02 05:55:59.796] [remoteagent] [info] [172.20.0.5][3d8a4fed][ExtensionHostConnection] <95> Extension Host Process exited with code: 0, signal: null.
+[2022-11-02 07:09:27.050] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 07:09:33.153] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 07:09:33.154] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 07:09:47.286] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 07:14:24.287] [remoteagent] [error] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)
+[2022-11-02 07:14:24.287] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 07:14:48.872] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 07:14:48.872] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 07:14:49.040] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 07:20:50.700] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 07:20:50.752] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 07:20:50.819] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 07:20:50.819] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 07:22:11.948] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 08:43:30.180] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 08:43:45.567] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 08:43:45.568] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has reconnected.
+[2022-11-02 08:43:45.713] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 08:50:40.135] [remoteagent] [info] [172.20.0.5][a3485478][ManagementConnection] New connection established.
+[2022-11-02 08:50:41.142] [remoteagent] [info] [172.20.0.5][74ee8060][ExtensionHostConnection] New connection established.
+[2022-11-02 08:50:41.153] [remoteagent] [info] [172.20.0.5][74ee8060][ExtensionHostConnection] <131> Launched Extension Host Process.
+[2022-11-02 08:50:41.201] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 37
+[2022-11-02 08:50:41.734] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 38
+[2022-11-02 08:50:41.932] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 39
+[2022-11-02 08:50:41.973] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 40
+[2022-11-02 08:50:41.980] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 41
+[2022-11-02 08:50:41.981] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 42
+[2022-11-02 08:50:41.981] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 43
+[2022-11-02 08:50:41.983] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 44
+[2022-11-02 08:50:41.985] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 45
+[2022-11-02 08:59:43.343] [remoteagent] [info] [172.20.0.5][a3485478][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 08:59:43.344] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 09:29:39.718] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 09:29:39.718] [remoteagent] [info] [172.20.0.5][a3485478][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 09:29:39.719] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] New connection established.
+[2022-11-02 09:29:41.155] [remoteagent] [warning] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: Cannot find module '../build/Release/keytar.node'
+Require stack:
+- /usr/lib/code-server/lib/vscode/node_modules/keytar/lib/keytar.js
+- /usr/lib/code-server/lib/vscode/out/bootstrap-amd.js
+- /usr/lib/code-server/out/node/util.js
+- /usr/lib/code-server/out/node/cli.js
+- /usr/lib/code-server/out/node/entry.js
+[2022-11-02 09:29:44.867] [remoteagent] [info] [172.20.0.5][10e551aa][ExtensionHostConnection] New connection established.
+[2022-11-02 09:29:44.875] [remoteagent] [info] [172.20.0.5][10e551aa][ExtensionHostConnection] <196> Launched Extension Host Process.
+[2022-11-02 09:33:11.317] [remoteagent] [error] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)
+[2022-11-02 09:33:11.318] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 09:34:39.744] [remoteagent] [info] [172.20.0.5][89316048][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+[2022-11-02 09:34:39.745] [remoteagent] [info] [172.20.0.5][a3485478][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+[2022-11-02 09:34:39.786] [remoteagent] [info] [172.20.0.5][74ee8060][ExtensionHostConnection] <131> Extension Host Process exited with code: 0, signal: null.
+[2022-11-02 09:34:39.902] [remoteagent] [info] [172.20.0.5][0805a00a][ExtensionHostConnection] <63> Extension Host Process exited with code: 0, signal: null.
+[2022-11-02 09:35:02.751] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 09:35:02.751] [remoteagent] [info] [172.20.0.5][10e551aa][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 09:35:04.551] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] The client has reconnected.
+[2022-11-02 09:53:18.005] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-02 10:02:39.849] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-02 10:02:39.850] [remoteagent] [info] [172.20.0.5][10e551aa][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 10:02:41.836] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] The client has reconnected.
+[2022-11-02 10:06:45.239] [remoteagent] [info] [172.20.0.5][96cc9f8a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-02 10:06:45.283] [remoteagent] [info] [172.20.0.5][10e551aa][ExtensionHostConnection] <196> Extension Host Process exited with code: 0, signal: null.
+[2022-11-02 10:07:11.224] [remoteagent] [info] [172.20.0.5][0edcb5bb][ManagementConnection] New connection established.
+[2022-11-02 10:07:12.522] [remoteagent] [info] [172.20.0.5][ba63d8da][ExtensionHostConnection] New connection established.
+[2022-11-02 10:07:12.529] [remoteagent] [info] [172.20.0.5][ba63d8da][ExtensionHostConnection] <226> Launched Extension Host Process.
+[2022-11-02 10:38:23.184] [remoteagent] [info] [172.20.0.5][ba63d8da][ExtensionHostConnection] The client has reconnected.
+[2022-11-02 11:59:00.862] [remoteagent] [info] [172.20.0.5][0edcb5bb][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-02 11:59:00.913] [remoteagent] [info] [172.20.0.5][ba63d8da][ExtensionHostConnection] <226> Extension Host Process exited with code: 0, signal: null.
+[2022-11-03 01:29:20.777] [remoteagent] [info] [172.20.0.5][7ebc21f2][ManagementConnection] New connection established.
+[2022-11-03 01:29:22.101] [remoteagent] [info] [172.20.0.5][488ee331][ExtensionHostConnection] New connection established.
+[2022-11-03 01:29:22.110] [remoteagent] [info] [172.20.0.5][488ee331][ExtensionHostConnection] <266> Launched Extension Host Process.
+[2022-11-03 01:54:50.424] [remoteagent] [info] [172.20.0.5][7ebc21f2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-03 01:54:50.436] [remoteagent] [info] [172.20.0.5][488ee331][ExtensionHostConnection] <266> Extension Host Process exited with code: 0, signal: null.
+[2022-11-03 01:54:52.395] [remoteagent] [info] [172.20.0.5][f9c5b244][ManagementConnection] New connection established.
+[2022-11-03 01:54:53.423] [remoteagent] [info] [172.20.0.5][9388a23a][ExtensionHostConnection] New connection established.
+[2022-11-03 01:54:53.432] [remoteagent] [info] [172.20.0.5][9388a23a][ExtensionHostConnection] <297> Launched Extension Host Process.
+[2022-11-03 06:16:01.946] [remoteagent] [info] [172.20.0.5][f9c5b244][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-03 06:16:01.989] [remoteagent] [info] [172.20.0.5][9388a23a][ExtensionHostConnection] <297> Extension Host Process exited with code: 0, signal: null.
+[2022-11-03 06:16:04.402] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] New connection established.
+[2022-11-03 06:16:05.830] [remoteagent] [info] [172.20.0.5][d94b5a0b][ExtensionHostConnection] New connection established.
+[2022-11-03 06:16:05.843] [remoteagent] [info] [172.20.0.5][d94b5a0b][ExtensionHostConnection] <334> Launched Extension Host Process.
+[2022-11-03 09:40:19.811] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-03 09:40:26.012] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-03 09:40:26.013] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] The client has reconnected.
+[2022-11-03 09:40:28.302] [remoteagent] [info] [172.20.0.5][d94b5a0b][ExtensionHostConnection] The client has reconnected.
+[2022-11-03 10:37:19.246] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-03 10:37:32.064] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-03 10:37:32.064] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] The client has reconnected.
+[2022-11-03 10:37:33.031] [remoteagent] [info] [172.20.0.5][d94b5a0b][ExtensionHostConnection] The client has reconnected.
+[2022-11-03 10:37:41.255] [remoteagent] [info] [172.20.0.5][aee0188c][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-03 10:37:41.270] [remoteagent] [info] [172.20.0.5][d94b5a0b][ExtensionHostConnection] <334> Extension Host Process exited with code: 0, signal: null.
+[2022-11-03 10:37:43.614] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] New connection established.
+[2022-11-03 10:37:45.275] [remoteagent] [info] [172.20.0.5][0d366974][ExtensionHostConnection] New connection established.
+[2022-11-03 10:37:45.286] [remoteagent] [info] [172.20.0.5][0d366974][ExtensionHostConnection] <448> Launched Extension Host Process.
+[2022-11-03 10:45:51.651] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-03 10:46:04.752] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-03 10:46:04.753] [remoteagent] [info] [172.20.0.5][0d366974][ExtensionHostConnection] The client has reconnected.
+[2022-11-03 10:46:06.003] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] The client has reconnected.
+[2022-11-03 10:49:28.809] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-03 10:49:38.034] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-03 10:49:38.034] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] The client has reconnected.
+[2022-11-03 10:49:38.995] [remoteagent] [info] [172.20.0.5][0d366974][ExtensionHostConnection] The client has reconnected.
+[2022-11-03 10:53:11.251] [remoteagent] [info] [172.20.0.5][9e5a05b9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-03 10:53:11.264] [remoteagent] [info] [172.20.0.5][0d366974][ExtensionHostConnection] <448> Extension Host Process exited with code: 0, signal: null.
+[2022-11-03 10:53:13.099] [remoteagent] [info] [172.20.0.5][c91f6995][ManagementConnection] New connection established.
+[2022-11-03 10:53:14.384] [remoteagent] [info] [172.20.0.5][a8b25e12][ExtensionHostConnection] New connection established.
+[2022-11-03 10:53:14.391] [remoteagent] [info] [172.20.0.5][a8b25e12][ExtensionHostConnection] <480> Launched Extension Host Process.
+[2022-11-03 11:03:21.712] [remoteagent] [info] [172.20.0.5][c91f6995][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-03 11:03:21.728] [remoteagent] [info] [172.20.0.5][a8b25e12][ExtensionHostConnection] <480> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 02:29:25.569] [remoteagent] [info] [172.20.0.5][c78c278a][ManagementConnection] New connection established.
+[2022-11-04 02:29:26.930] [remoteagent] [info] [172.20.0.5][7cb69c5b][ExtensionHostConnection] New connection established.
+[2022-11-04 02:29:26.937] [remoteagent] [info] [172.20.0.5][7cb69c5b][ExtensionHostConnection] <521> Launched Extension Host Process.
+[2022-11-04 02:59:16.031] [remoteagent] [info] [172.20.0.5][c78c278a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-04 02:59:16.047] [remoteagent] [info] [172.20.0.5][7cb69c5b][ExtensionHostConnection] <521> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 02:59:20.762] [remoteagent] [info] [172.20.0.5][22c677a5][ManagementConnection] New connection established.
+[2022-11-04 02:59:22.077] [remoteagent] [info] [172.20.0.5][b9eadba9][ExtensionHostConnection] New connection established.
+[2022-11-04 02:59:22.086] [remoteagent] [info] [172.20.0.5][b9eadba9][ExtensionHostConnection] <554> Launched Extension Host Process.
+[2022-11-04 06:50:56.984] [remoteagent] [info] [172.20.0.5][22c677a5][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-04 06:50:57.034] [remoteagent] [info] [172.20.0.5][b9eadba9][ExtensionHostConnection] <554> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 06:50:58.912] [remoteagent] [info] [172.20.0.5][19b43c88][ManagementConnection] New connection established.
+[2022-11-04 06:51:00.038] [remoteagent] [info] [172.20.0.5][85df4c03][ExtensionHostConnection] New connection established.
+[2022-11-04 06:51:00.048] [remoteagent] [info] [172.20.0.5][85df4c03][ExtensionHostConnection] <590> Launched Extension Host Process.
+[2022-11-04 07:31:19.616] [remoteagent] [info] [172.20.0.5][e0abd7f7][ManagementConnection] New connection established.
+[2022-11-04 07:31:20.610] [remoteagent] [info] [172.20.0.5][e4ab7319][ExtensionHostConnection] New connection established.
+[2022-11-04 07:31:20.619] [remoteagent] [info] [172.20.0.5][e4ab7319][ExtensionHostConnection] <627> Launched Extension Host Process.
+[2022-11-04 07:33:23.905] [remoteagent] [info] [172.20.0.5][85df4c03][ExtensionHostConnection] The client has reconnected.
+[2022-11-04 07:59:28.932] [remoteagent] [info] [172.20.0.5][e0abd7f7][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-04 07:59:28.950] [remoteagent] [info] [172.20.0.5][e4ab7319][ExtensionHostConnection] <627> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 07:59:48.137] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] New connection established.
+[2022-11-04 07:59:49.118] [remoteagent] [info] [172.20.0.5][e53996bc][ExtensionHostConnection] New connection established.
+[2022-11-04 07:59:49.127] [remoteagent] [info] [172.20.0.5][e53996bc][ExtensionHostConnection] <676> Launched Extension Host Process.
+[2022-11-04 08:19:10.737] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-04 08:49:29.394] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-04 08:49:29.395] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] The client has reconnected.
+[2022-11-04 08:49:30.112] [remoteagent] [info] [172.20.0.5][e53996bc][ExtensionHostConnection] The client has reconnected.
+[2022-11-04 08:49:32.491] [remoteagent] [info] [172.20.0.5][c0287afc][ManagementConnection] New connection established.
+[2022-11-04 08:49:33.600] [remoteagent] [info] [172.20.0.5][f9d0e9e0][ExtensionHostConnection] New connection established.
+[2022-11-04 08:49:33.614] [remoteagent] [info] [172.20.0.5][f9d0e9e0][ExtensionHostConnection] <708> Launched Extension Host Process.
+[2022-11-04 08:49:33.779] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 172
+[2022-11-04 08:49:34.257] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 173
+[2022-11-04 08:49:34.432] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 174
+[2022-11-04 08:49:34.467] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 175
+[2022-11-04 08:49:34.468] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 176
+[2022-11-04 08:49:34.468] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 177
+[2022-11-04 08:49:34.469] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 178
+[2022-11-04 08:49:34.470] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 179
+[2022-11-04 08:49:34.480] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 180
+[2022-11-04 09:21:53.086] [remoteagent] [info] [172.20.0.5][c0287afc][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-04 09:21:53.148] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-04 11:54:02.365] [remoteagent] [info] [172.20.0.5][19b43c88][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-04 11:54:02.429] [remoteagent] [info] [172.20.0.5][85df4c03][ExtensionHostConnection] <590> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 12:21:54.230] [remoteagent] [info] [172.20.0.5][f9d0e9e0][ExtensionHostConnection] <708> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 12:21:54.276] [remoteagent] [info] [172.20.0.5][e53996bc][ExtensionHostConnection] <676> Extension Host Process exited with code: 0, signal: null.
+[2022-11-04 12:21:55.016] [remoteagent] [info] [172.20.0.5][c0287afc][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+[2022-11-04 12:21:55.018] [remoteagent] [info] [172.20.0.5][37eb4086][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+[2022-11-07 02:25:20.503] [remoteagent] [info] [172.20.0.5][e0beb567][ManagementConnection] New connection established.
+[2022-11-07 02:25:22.587] [remoteagent] [info] [172.20.0.5][2b703214][ExtensionHostConnection] New connection established.
+[2022-11-07 02:25:22.603] [remoteagent] [info] [172.20.0.5][2b703214][ExtensionHostConnection] <772> Launched Extension Host Process.
+[2022-11-07 02:25:37.965] [remoteagent] [info] [172.20.0.5][e0beb567][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-07 02:25:37.985] [remoteagent] [info] [172.20.0.5][2b703214][ExtensionHostConnection] <772> Extension Host Process exited with code: 0, signal: null.
+[2022-11-07 02:25:40.025] [remoteagent] [info] [172.20.0.5][4409efb2][ManagementConnection] New connection established.
+[2022-11-07 02:25:41.257] [remoteagent] [info] [172.20.0.5][aadbc4e5][ExtensionHostConnection] New connection established.
+[2022-11-07 02:25:41.274] [remoteagent] [info] [172.20.0.5][aadbc4e5][ExtensionHostConnection] <804> Launched Extension Host Process.
+[2022-11-07 02:25:54.625] [remoteagent] [info] [172.20.0.5][4409efb2][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-07 02:25:54.644] [remoteagent] [info] [172.20.0.5][aadbc4e5][ExtensionHostConnection] <804> Extension Host Process exited with code: 0, signal: null.
+[2022-11-07 02:25:55.872] [remoteagent] [info] [172.20.0.5][ef7f3027][ManagementConnection] New connection established.
+[2022-11-07 02:25:56.790] [remoteagent] [warning] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/coder/projects/, real: /home/coder/projects)
+[2022-11-07 02:25:56.925] [remoteagent] [info] [172.20.0.5][aa7be2d6][ExtensionHostConnection] New connection established.
+[2022-11-07 02:25:56.942] [remoteagent] [info] [172.20.0.5][aa7be2d6][ExtensionHostConnection] <836> Launched Extension Host Process.
+[2022-11-07 02:26:02.489] [remoteagent] [info] [172.20.0.5][ef7f3027][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-07 02:26:02.504] [remoteagent] [info] [172.20.0.5][aa7be2d6][ExtensionHostConnection] <836> Extension Host Process exited with code: 0, signal: null.
+[2022-11-07 02:26:03.947] [remoteagent] [info] [172.20.0.5][3a00db83][ManagementConnection] New connection established.
+[2022-11-07 02:26:04.903] [remoteagent] [warning] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/coder/projects/, real: /home/coder/projects)
+[2022-11-07 02:26:04.992] [remoteagent] [info] [172.20.0.5][c5a79812][ExtensionHostConnection] New connection established.
+[2022-11-07 02:26:05.010] [remoteagent] [info] [172.20.0.5][c5a79812][ExtensionHostConnection] <865> Launched Extension Host Process.
+[2022-11-07 02:26:08.498] [remoteagent] [info] [172.20.0.5][3a00db83][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-07 02:26:08.510] [remoteagent] [info] [172.20.0.5][c5a79812][ExtensionHostConnection] <865> Extension Host Process exited with code: 0, signal: null.
+[2022-11-07 02:26:09.583] [remoteagent] [info] [172.20.0.5][f3c218dc][ManagementConnection] New connection established.
+[2022-11-07 02:26:10.388] [remoteagent] [warning] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[2022-11-07 02:26:10.462] [remoteagent] [info] [172.20.0.5][f2b5f9d7][ExtensionHostConnection] New connection established.
+[2022-11-07 02:26:10.491] [remoteagent] [info] [172.20.0.5][f2b5f9d7][ExtensionHostConnection] <893> Launched Extension Host Process.
+[2022-11-07 11:04:28.618] [remoteagent] [info] [172.20.0.5][f3c218dc][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-07 11:04:28.672] [remoteagent] [info] [172.20.0.5][f2b5f9d7][ExtensionHostConnection] <893> Extension Host Process exited with code: 0, signal: null.
+[2022-11-08 03:00:47.891] [remoteagent] [info] [172.20.0.5][b334fab8][ManagementConnection] New connection established.
+[2022-11-08 03:00:49.025] [remoteagent] [info] [172.20.0.5][f3cdc18d][ExtensionHostConnection] New connection established.
+[2022-11-08 03:00:49.038] [remoteagent] [info] [172.20.0.5][f3cdc18d][ExtensionHostConnection] <1015> Launched Extension Host Process.
+[2022-11-08 03:00:49.076] [remoteagent] [warning] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[2022-11-08 03:09:45.166] [remoteagent] [info] [172.20.0.5][0ec1680d][ManagementConnection] New connection established.
+[2022-11-08 03:09:45.999] [remoteagent] [warning] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[2022-11-08 03:09:46.117] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 235
+[2022-11-08 03:09:46.118] [remoteagent] [info] [172.20.0.5][35b5cd07][ExtensionHostConnection] New connection established.
+[2022-11-08 03:09:46.128] [remoteagent] [info] [172.20.0.5][35b5cd07][ExtensionHostConnection] <1055> Launched Extension Host Process.
+[2022-11-08 03:09:46.826] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 236
+[2022-11-08 03:09:46.912] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 237
+[2022-11-08 03:09:46.964] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 238
+[2022-11-08 03:09:46.965] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 239
+[2022-11-08 03:09:46.965] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 240
+[2022-11-08 03:09:46.966] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 241
+[2022-11-08 03:09:46.966] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 242
+[2022-11-08 03:09:46.966] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 243
+[2022-11-08 03:09:48.975] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 244
+[2022-11-08 03:09:48.985] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 245
+[2022-11-08 03:09:49.062] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 246
+[2022-11-08 03:09:49.110] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 247
+[2022-11-08 03:09:49.159] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 248
+[2022-11-08 03:09:49.246] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 249
+[2022-11-08 03:09:49.257] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 250
+[2022-11-08 03:09:49.401] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 251
+[2022-11-08 03:09:49.404] [remoteagent] [warning] RequestStore#acceptReply was called without receiving a matching request 252
+[2022-11-08 03:10:17.397] [remoteagent] [info] [172.20.0.5][0f84af2c][ManagementConnection] New connection established.
+[2022-11-08 03:10:18.363] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] New connection established.
+[2022-11-08 03:10:18.375] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] <1083> Launched Extension Host Process.
+[2022-11-08 03:10:18.842] [remoteagent] [info] [172.20.0.5][0ec1680d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-08 03:10:18.858] [remoteagent] [info] [172.20.0.5][35b5cd07][ExtensionHostConnection] <1055> Extension Host Process exited with code: 0, signal: null.
+[2022-11-08 03:11:40.673] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 03:12:43.270] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 03:14:44.887] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 03:15:47.295] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 03:16:49.776] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 03:17:43.357] [remoteagent] [info] [172.20.0.5][0f84af2c][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-08 03:17:43.373] [remoteagent] [info] [172.20.0.5][f2ee5597][ExtensionHostConnection] <1083> Extension Host Process exited with code: 0, signal: null.
+[2022-11-08 10:30:03.613] [remoteagent] [info] [172.20.0.5][f3cdc18d][ExtensionHostConnection] The client has reconnected.
+[2022-11-08 11:10:43.119] [remoteagent] [info] [172.20.0.5][b334fab8][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-08 11:10:43.179] [remoteagent] [info] [172.20.0.5][f3cdc18d][ExtensionHostConnection] <1015> Extension Host Process exited with code: 0, signal: null.
+[2022-11-09 02:26:05.384] [remoteagent] [info] [172.20.0.5][8d76f3bb][ManagementConnection] New connection established.
+[2022-11-09 02:26:06.704] [remoteagent] [info] [172.20.0.5][6f167738][ExtensionHostConnection] New connection established.
+[2022-11-09 02:26:06.717] [remoteagent] [info] [172.20.0.5][6f167738][ExtensionHostConnection] <1175> Launched Extension Host Process.
+[2022-11-09 02:26:16.659] [remoteagent] [info] [172.20.0.5][8d76f3bb][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-09 02:26:16.674] [remoteagent] [info] [172.20.0.5][6f167738][ExtensionHostConnection] <1175> Extension Host Process exited with code: 0, signal: null.
+[2022-11-09 02:26:18.096] [remoteagent] [info] [172.20.0.5][5a5ef4aa][ManagementConnection] New connection established.
+[2022-11-09 02:26:19.057] [remoteagent] [info] [172.20.0.5][4d6104a4][ExtensionHostConnection] New connection established.
+[2022-11-09 02:26:19.069] [remoteagent] [info] [172.20.0.5][4d6104a4][ExtensionHostConnection] <1209> Launched Extension Host Process.
+[2022-11-09 02:26:21.330] [remoteagent] [info] [172.20.0.5][5a5ef4aa][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2022-11-09 02:26:21.342] [remoteagent] [info] [172.20.0.5][4d6104a4][ExtensionHostConnection] <1209> Extension Host Process exited with code: 0, signal: null.
+[2022-11-09 02:26:24.023] [remoteagent] [info] [172.20.0.5][56e36139][ManagementConnection] New connection established.
+[2022-11-09 02:26:25.423] [remoteagent] [info] [172.20.0.5][a51f6238][ExtensionHostConnection] New connection established.
+[2022-11-09 02:26:25.434] [remoteagent] [info] [172.20.0.5][a51f6238][ExtensionHostConnection] <1229> Launched Extension Host Process.
+[2022-11-09 08:32:32.219] [remoteagent] [info] [172.20.0.5][56e36139][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2022-11-09 09:35:04.669] [remoteagent] [info] [172.20.0.5][56e36139][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2022-11-09 09:35:04.670] [remoteagent] [info] [172.20.0.5][8d6fe3e1][ManagementConnection] New connection established.
+[2022-11-09 09:35:05.800] [remoteagent] [info] [172.20.0.5][9abc7475][ExtensionHostConnection] New connection established.
+[2022-11-09 09:35:05.819] [remoteagent] [info] [172.20.0.5][9abc7475][ExtensionHostConnection] <1262> Launched Extension Host Process.
+[2022-11-09 09:40:04.709] [remoteagent] [info] [172.20.0.5][a51f6238][ExtensionHostConnection] <1229> Extension Host Process exited with code: 0, signal: null.
+[2022-11-09 09:40:04.776] [remoteagent] [info] [172.20.0.5][56e36139][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.

@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-praefect.fullname" . }}
+  labels:
+    {{- include "gitee-praefect.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-praefect.servicePortName" . }}
+  selector:
+    {{- include "gitee-praefect.selectorLabels" . | nindent 4 }}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: s001-praefect-pub-gitee
+  labels:
+    {{- include "gitee-praefect.labels" . | nindent 4 }}
+spec:
+  type: NodePort
+  ports:
+    - port: 9999
+      targetPort: 9999
+      nodePort: 33999
+      protocol: TCP
+      name: praefect
+  selector:
+    {{- include "gitee-praefect.selectorLabels" . | nindent 4 }}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: s002-praefect-pub-gitee
+  labels:
+    {{- include "gitee-praefect.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9999
+      targetPort: 9999
+      protocol: TCP
+      name: praefect
+  selector:
+    {{- include "gitee-praefect.selectorLabels" . | nindent 4 }}

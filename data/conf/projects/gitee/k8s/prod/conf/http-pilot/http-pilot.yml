@@ -1,0 +1,45 @@
+app:
+  description: "git via http fast proxy server"
+  address: "0.0.0.0:6400"
+  idle_timeout: 120
+  read_timeout: 480
+  write_timeout: 7200
+  auth_server: "http://authunicorn.placeholder_namespace:3000"
+  internal_token: "f2ac95a7-c927-432e-9250-be1b74e1e5b4"
+
+rate_limit:
+  enabled: true
+  max: 900
+  max_wait: 130
+  # Unit: second
+  wait_timeout: 12
+
+archive:
+  enabled: true
+  auth_token: "7e90dfc2-1a9f-473c-b63b-fdcbb26ac5e2"
+
+# config of raw
+# whether to check if the file is locked
+raw:
+  check_block_enabled: true
+
+grpc:
+  port: 9999
+  token: ""
+  # Unit: second
+  #  Notice: client will heng up after grpc timeout, We cannot effectively notify the client
+  timeout: 7000
+  repo_prefix: "/home/git/repositories/"
+
+# Access and Error only used by daemon mode
+# In normal mode, the log will be printed on stdout
+log:
+  access: "logs/http-pilot-access.log"
+  error: "logs/http-pilot-error.log"
+  pid: "logs/http-pilot.pid"
+  # text or json
+  format: "text"
+  # megabytes
+  max_size: 30
+  # days
+  max_age: 60

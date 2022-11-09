@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-grms.fullname" . }}
+  labels:
+    {{- include "gitee-grms.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-grms.servicePortName" . }}
+  selector:
+    {{- include "gitee-grms.selectorLabels" . | nindent 4 }}

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "gitee-graphqlunicorn.fullname" . }}-test-connection"
+  labels:
+    {{- include "gitee-graphqlunicorn.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: hub.gitee.com/library/busybox:latest
+      command: ['curl']
+      args: ['{{ include "gitee-graphqlunicorn.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

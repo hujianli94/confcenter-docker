@@ -1,0 +1,16 @@
+octopus:
+  replicated: false
+  fully_replicated: false
+  environments:
+    - production
+  production:
+    slave:
+      host: mysql-mysql-slave.gitee-radar.svc.cluster.local # 备库
+      port: 3306
+      encoding: utf8mb4
+      reconnect: true
+      adapter: mysql2
+      database: gitee_production
+      username: gitee # 只读账号
+      password: oschina123
+      pool: 50

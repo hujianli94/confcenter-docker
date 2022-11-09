@@ -1,0 +1,16 @@
+[2022-10-31 06:45:21.868] [remoteagent] [info] 
+
+
+
+
+[2022-10-31 06:45:21.868] [remoteagent] [info] Extension host agent started.
+[2022-10-31 06:55:33.104] [remoteagent] [info] [172.20.0.5][ec6c5796][ManagementConnection] New connection established.
+[2022-10-31 06:55:33.495] [remoteagent] [warning] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: Cannot find module '../build/Release/keytar.node'
+Require stack:
+- /usr/lib/code-server/lib/vscode/node_modules/keytar/lib/keytar.js
+- /usr/lib/code-server/lib/vscode/out/bootstrap-amd.js
+- /usr/lib/code-server/out/node/util.js
+- /usr/lib/code-server/out/node/cli.js
+- /usr/lib/code-server/out/node/entry.js
+[2022-10-31 06:55:34.548] [remoteagent] [info] [172.20.0.5][9df6d6ac][ExtensionHostConnection] New connection established.
+[2022-10-31 06:55:34.554] [remoteagent] [info] [172.20.0.5][9df6d6ac][ExtensionHostConnection] <85> Launched Extension Host Process.

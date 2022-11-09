@@ -1,0 +1,40 @@
+#
+# PRODUCTION
+#
+production:
+  adapter: mysql2
+  encoding: utf8mb4
+  reconnect: false
+  database: gitee_production
+  pool: 200
+  username: root
+  password: "oschina123"
+  host: mysql.pub-comm.svc.cluster.local
+  port: 3306
+# socket: /tmp/mysql.sock
+
+#
+# Development specific
+#
+developmentfadf:
+  adapter: mysql2
+  encoding: utf8mb4
+  reconnect: false
+  database: gitee_production
+  pool: 5
+  username: gitosc
+  password: "gitosc1203"
+  # socket: /tmp/mysql.sock
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: gitee_test
+  pool: 5
+  username: root
+  password:
+  # socket: /tmp/mysql.sock

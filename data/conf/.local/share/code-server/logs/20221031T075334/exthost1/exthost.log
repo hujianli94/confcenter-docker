@@ -1,0 +1,20 @@
+[2022-10-31 07:53:37.782] [exthost] [info] Extension host with pid 78 started
+[2022-10-31 07:53:37.784] [exthost] [error] Error: EEXIST: file already exists, open '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock'
+[2022-10-31 07:53:37.786] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Could not acquire lock, checking if the file is stale.
+[2022-10-31 07:53:37.786] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': The lock looks stale, waiting for 2s.
+[2022-10-31 07:53:37.869] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-10-31 07:53:37.874] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-10-31 07:53:37.878] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-10-31 07:53:39.787] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': The lock looks stale even after waiting for 2s.
+[2022-10-31 07:53:39.787] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Deleting a stale lock.
+[2022-10-31 07:53:39.790] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Lock acquired.
+[2022-10-31 07:53:39.878] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-10-31 07:53:39.939] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-10-31 07:53:39.999] [exthost] [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.commandsToLog', provide the URI of a resource or 'null' for any resource.
+[2022-10-31 07:53:40.012] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-31 07:53:40.027] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-10-31 07:53:40.031] [exthost] [info] Eager extensions activated
+[2022-10-31 07:53:40.094] [exthost] [warning] [vscode.emmet] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'emmet.includeLanguages', provide the URI of a resource or 'null' for any resource.
+[2022-10-31 07:53:40.210] [exthost] [info] extension host terminating: received terminate message from renderer
+[2022-10-31 07:53:40.210] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/-2fd6ccab/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+[2022-10-31 07:53:40.215] [exthost] [info] Extension host with pid 78 exiting with code 0

@@ -1,0 +1,62 @@
+app:
+  description: "git via ssh fast proxy server"
+  logo: "GITEE.COM"
+  date: "2021-04-10 12:00"
+  address: "0.0.0.0:22"
+  prometheus_address: "0.0.0.0:9236"
+  user: "git"
+  auth_server: "http://authunicorn.placeholder_namespace:3000"
+  internal_token: "f2ac95a7-c927-432e-9250-be1b74e1e5b4"
+  status_token: "b1325c8350e4"
+  check_ip_enabled: true
+  deadline: 3600
+  idle_timeout: 120
+
+host_keys:
+  - "etc/ssh/ssh_host_rsa_key"
+  - "etc/ssh/ssh_host_dsa_key"
+  - "etc/ssh/ssh_host_ecdsa_key"
+  - "etc/ssh/ssh_host_ed25519_key"
+
+rate_limit:
+  enabled: true
+  max: 1800
+  max_wait: 130
+  # Unit: second
+  wait_timeout: 12
+
+grpc:
+  port: 9999
+  token: ""
+  # Unit: second
+  #  Notice: client will heng up after grpc timeout, We cannot effectively notify the client
+  timeout: 3400
+  repo_prefix: "/home/git/repositories/"
+  # config of gitaly-praefect, pilot will call host when enabled
+  praefect:
+    enabled: false
+    # In the case of a request with multiple hosts, one will be randomly selected to send the request
+    #   Currently, there is no health detection mechanism,
+    #   so it is recommended that the host only configure one and use vip to switch the praefect service
+    host:
+      - "127.0.0.1"
+
+log:
+  access: "logs/ssh-pilot-access.log"
+  error: "logs/ssh-pilot-error.log"
+  pid: "logs/ssh-pilot.pid"
+  # text or json
+  format: "text"
+  # megabytes
+  max_size: 30
+  # days
+  max_age: 60
+
+lfs:
+  auth_server: "http://authunicorn.placeholder_namespace:3000"
+  base_url: ""
+
+svn:
+  enabled: true
+  port: 3690
+  token: "a472a50a5cf7"

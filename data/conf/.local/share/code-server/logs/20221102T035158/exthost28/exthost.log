@@ -1,0 +1,15 @@
+[2022-11-09 09:35:06.590] [exthost] [info] Extension host with pid 1262 started
+[2022-11-09 09:35:06.590] [exthost] [error] Error: EEXIST: file already exists, open '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7/vscode.lock'
+[2022-11-09 09:35:06.591] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7/vscode.lock': Could not acquire lock, checking if the file is stale.
+[2022-11-09 09:35:06.592] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7/vscode.lock': The lock does not look stale, elapsed: 839 ms, giving up.
+[2022-11-09 09:35:06.596] [exthost] [info] Lock '/home/coder/.local/share/code-server/User/workspaceStorage/5ec6ced7-1/vscode.lock': Lock acquired.
+[2022-11-09 09:35:06.888] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-11-09 09:35:06.894] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-11-09 09:35:06.899] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-11-09 09:35:07.039] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-11-09 09:35:07.290] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-11-09 09:35:08.479] [exthost] [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.commandsToLog', provide the URI of a resource or 'null' for any resource.
+[2022-11-09 09:35:08.493] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-09 09:35:08.543] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-11-09 09:35:08.553] [exthost] [info] Eager extensions activated
+[2022-11-09 09:35:08.630] [exthost] [warning] [vscode.emmet] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'emmet.includeLanguages', provide the URI of a resource or 'null' for any resource.

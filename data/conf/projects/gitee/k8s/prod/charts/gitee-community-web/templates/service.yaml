@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-community-web.fullname" . }}
+  labels:
+    {{- include "gitee-community-web.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-community-web.servicePortName" . }}
+  selector:
+    {{- include "gitee-community-web.selectorLabels" . | nindent 4 }}

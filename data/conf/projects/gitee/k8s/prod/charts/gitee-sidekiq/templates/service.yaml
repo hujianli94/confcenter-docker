@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gitee-sidekiq.fullname" . }}
+  labels:
+    {{- include "gitee-sidekiq.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.target }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: {{ .Values.service.protocol }}
+      name: {{ include "gitee-sidekiq.servicePortName" . }}
+  selector:
+    {{- include "gitee-sidekiq.selectorLabels" . | nindent 4 }}

@@ -1,0 +1,172 @@
+[Title]
+Author="Force Charlie"
+LastModifed="2020-02-24"
+
+[Main]
+UpstreamPort=80
+RepoLowercase=false
+
+[Redis]
+# redis url
+# unix domain socket: unix:///var/run/redis/redis.sock
+URL="redis://192.168.3.110:6379"
+# write route cache to redis
+Flush=true
+# set the redis route cache expiration time, 0 will never expire (1month)
+Expires=2592000
+BlankPeriod = 3600
+# redis password empty not set
+#Password="123456"
+Pools=2
+
+[MySQL]
+URL="mysql://192.168.3.119:3306"
+Charset="utf8"
+Database="gitlabhq_production"
+Username="gitosc"
+Password="gitosc1203"
+Enabled=true
+Pools=2
+
+# when target is ProxyList[n][0]
+# proxy access to ProxyList[n][1]
+[TargetProxy]
+Enabled = true
+ProxyList = []
+
+[Api]
+
+# pid/rid ---- repository id(projects.id)
+# name ---- repository name (namespaces.path/projects.path)
+MatchURI=[
+    #"/api/v5/repos/@name", ## user/repo
+    #"/api/v3/projects/@pid",
+    #"/api/v3/gitee_search/project/@pid",
+    #"/api/v3/wikis/@wid",
+    #"/api/v3/gists/*/@gists",
+    #"/api/v5/gists/@gists",
+    #"/api/v8/enterprises/*/projects/@pid",
+    #"/enterprises/*/projects/@pid",
+    #"/enterprises/*/docs/@wid",
+    #"/enterprises/change_path/@nid",
+    #"/api/v3/mirror_projects/@name"
+]
+
+
+[Cache]
+# internal cache setings
+Enable=false
+Size=5000
+Expires=600
+
+# Domian name Mapping
+[DNM]
+DNSRealTime=false
+DNSCached=false
+## when DNM DNSCached false. not use storages
+Storages=[
+    "sto1",
+    "sto2",
+    "sto3",
+    "sto4"
+]
+
+[Distribution]
+# Fallback to use User.XXXX route (admin only)
+Fallback=[
+    "admin",
+    "weixin"
+]
+# Gray scale route
+GrayRoute=[]
+# PathNode fallback
+# don't append 'dashboard' to PathNodeFallback
+# the 'dashboard' is keyword
+PathNodeFallback=[
+    "update_username",
+    "admin",
+    "codes",
+    "fork_code",
+    "pwdauth",
+    "enterprises",
+    "update_path",
+    "complete_wechat_pwd",
+    "update_namespace"
+]
+# https://gitee.co/oschina/gitlab/blob/master/lib/gitlab/validate.rb
+# Update Keyword0,Keyword1 and restart nginx
+Keyword0=[
+        "oschina",
+        "organizations",
+        "auth",
+        "teams",
+        "users",
+        "user",
+        "projects",
+        "gists",
+        "explore",
+        "notifications",
+        "profile",
+        "search",
+        "admin",
+        "gvp",
+        "contact_us",
+        "businesses",
+        "languages",
+        "osc_login",
+        "clone_way",
+        "pwdauth",
+        "logout",
+        "remove_bulletin",
+        "current_user",
+        "login",
+        "signup",
+        "contributions.js",
+        "language",
+        "keys",
+        "get_userinfo",
+        "oauth",
+        "events",
+        "enterprises",
+        "education",
+        "upload",
+        "cool-resume",
+        "pages",
+        "gitee-stars"
+]
+# repo name not with
+# dashboard/wikis/path-with-namespace check
+Keyword1=[
+    "admin",
+    "groups",
+    "help",
+    "profile",
+    "projects",
+    "search",
+    #"codes", # so codes will parse key comment this line
+    "fork_project",
+    #"fork_code",
+    "events",
+    "enterprises",
+    "stared_projects",
+    "pull_requests",
+    "issues",
+    "following",
+    "followers",
+    "watched",
+    "starred",
+    "git-upload-pack",
+    "git-receive-pack",
+    "HEAD",
+    "refs",
+    "event_list",
+    "last_push_event",
+    "contribution_timeline",
+    # 2020-01-03 add
+    "members",
+    "display_wechat",
+    "custom_featured_projects",
+    "create_pinned_projects",
+    "contribution_in_date",
+    "verify_second_verification"
+]

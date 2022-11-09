@@ -1,0 +1,90 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-giteeAppVersion-convertedName
+  labels:
+    app.kubernetes.io/name: sa-giteeAppVersion-convertedName
+---
+apiVersion: v1
+data:
+  entrypoint.sh: |
+    export RAILS_ENV=production
+    export HOME=/home/git
+    export BUNDLE_APP_CONFIG=/usr/local/bundle
+    export GEM_HOME=/usr/local/bundle
+    export PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+    mkdir -p /tmp/out
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+    wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/share/conf/haproxy/ -P /etc/haproxy
+    wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/share/conf/gnupg/gpgpri/ -P /home/git/gpgpri
+    wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/prod/conf/unicorn/ -P /home/git/gitee/config
+
+    grep -lr placeholder_namespace /home/git/gitee/config|xargs -I {} sed -i "s#placeholder_namespace#giteeAppNamespace#g" {}
+    service haproxy start
+
+    cd /home/git/gitee
+    bundle exec rake giteeRakeName > /tmp/out/rake-giteeAppVersion-convertedName.log 2>/tmp/out/rake-giteeAppVersion-convertedName.err
+
+    if [ $? -eq 0 ]; then
+        echo "Uploading output files..."
+        curl -X MKCOL --user "webdav:123123" "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName"
+        ls /tmp/out/ > /tmp/file_list.txt
+        while read line
+        do
+            curl --user "webdav:123123" -T /tmp/out/$line "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName/$line"
+        done < /tmp/file_list.txt
+    else
+        echo "Run rake failed exiting..."
+        curl -X MKCOL --user "webdav:123123" "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName"
+        ls /tmp/out/ > /tmp/file_list.txt
+        while read line
+        do
+            curl --user "webdav:123123" -T /tmp/out/$line "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName/$line"
+        done < /tmp/file_list.txt
+        exit 1
+    fi
+kind: ConfigMap
+metadata:
+  name: job-giteeAppVersion-convertedName-entrypoint-sh
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rake-giteeAppVersion-convertedName
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 3
+  template:
+    spec:
+      serviceAccountName: sa-giteeAppVersion-convertedName
+      containers:
+        - name: rake-giteeAppVersion-convertedName
+          image: "hub.gitee.com/gitee/gitee:giteeAppVersion"
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "/entrypoint.sh"]
+          resources:
+            limits:
+              cpu: 4
+              memory: 16Gi
+            requests:
+              cpu: 4
+              memory: 16Gi
+          volumeMounts:
+          - name: job-giteeAppVersion-convertedName-entrypoint-sh
+            mountPath: /entrypoint.sh
+            subPath: entrypoint.sh
+      restartPolicy: Never
+      volumes:
+      - name: job-giteeAppVersion-convertedName-entrypoint-sh
+        configMap:
+          name: job-giteeAppVersion-convertedName-entrypoint-sh
+      nodeSelector:
+        node_role: giteeRuby
+      tolerations:
+        - effect: NoSchedule
+          key: GiteeRubyOnly
+          operator: Equal
+          value: "yes"

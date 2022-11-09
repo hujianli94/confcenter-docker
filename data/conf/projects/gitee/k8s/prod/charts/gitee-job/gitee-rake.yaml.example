@@ -1,0 +1,74 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-giteeAppVersion-convertedName
+  labels:
+    app.kubernetes.io/name: sa-giteeAppVersion-convertedName
+---
+apiVersion: v1
+data:
+  entrypoint.sh: |
+    cd /tmp
+    export RAILS_ENV=production
+    export HOME=/home/git
+    export BUNDLE_APP_CONFIG=/usr/local/bundle
+    export GEM_HOME=/usr/local/bundle
+    export PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    mkdir /tmp/out
+    env > /tmp/out/rake-giteeAppVersion-convertedName.log
+    sleep 60 >> /tmp/out/rake-giteeAppVersion-convertedName.log 2>&1
+    if [ $? -eq 0 ]; then
+        echo "Uploading output files..."
+        curl -X MKCOL --user "webdav:123123" "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName"
+        ls /tmp/out/ > /tmp/file_list.txt
+        while read line
+        do
+            curl --user "webdav:123123" -T /tmp/out/$line "https://webdavd.autom.studio/share/gitee/k8s/share/rake/giteeAppVersion-convertedName/$line"
+        done < /tmp/file_list.txt
+    else
+        echo "Run rake failed exiting..."
+        exit 1
+    fi
+kind: ConfigMap
+metadata:
+  name: job-giteeAppVersion-convertedName-entrypoint-sh
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rake-giteeAppVersion-convertedName
+spec:
+  ttlSecondsAfterFinished: 60
+  backoffLimit: 3
+  template:
+    spec:
+      serviceAccountName: sa-giteeAppVersion-convertedName
+      containers:
+        - name: rake-giteeAppVersion-convertedName
+          image: "hub.gitee.com/library/toolbox:3.16.0"
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "/tmp/entrypoint.sh"]
+          resources:
+            limits:
+              cpu: 4
+              memory: 16Gi
+            requests:
+              cpu: 4
+              memory: 16Gi
+          volumeMounts:
+          - name: job-giteeAppVersion-convertedName-entrypoint-sh
+            mountPath: /tmp/entrypoint.sh
+            subPath: entrypoint.sh
+      restartPolicy: Never
+      volumes:
+      - name: job-giteeAppVersion-convertedName-entrypoint-sh
+        configMap:
+          name: job-giteeAppVersion-convertedName-entrypoint-sh
+      nodeSelector:
+        node_role: giteeRuby
+      tolerations:
+        - effect: NoSchedule
+          key: GiteeRubyOnly
+          operator: Equal
+          value: "yes"

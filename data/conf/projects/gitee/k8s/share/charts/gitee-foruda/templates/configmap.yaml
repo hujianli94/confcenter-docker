@@ -1,0 +1,56 @@
+apiVersion: v1
+data:
+  config.toml: |
+    db_engine="postgres"
+
+    [http]
+    https = false
+    port = 4200
+
+    [security]
+    auth_token = "4tMic9hRo6MQMT5iHsbQsh3KjfoBuz38"
+    aes_key = "d2X7Txihb57kPWSRYnoE0QrsjTrjA5AW"
+    expire = 900
+
+    [upload]
+    chunk_upload_dir = "./data/chunk"
+    full_file_dir = "./data/fullfile"
+    max_chunk_size = 5000000
+    max_file_size_upload = 200000000
+    max_transform_file_size = 50000000
+
+    [download]
+    #mode = "redirect" # `redirect` or `fetch` default `fetch`.
+
+    [postgresql]
+    host = "10.0.64.101"
+    port = 5000
+    user = "gitee_foruda"
+    database = "foruda"
+    password = "p45wT8HiS1Yk"
+    max_conns = 100 # postgresql typically 100 connections
+
+    [mongodb]
+    user = "foruda"
+    password = "foruda"
+    host = "localhost"
+    port = 27017
+    database = "foruda"
+    max_conns = 100
+
+
+    [fastdfs]
+    tracker_server = "10.0.0.18:22000"
+    max_conns = 128
+    port = 22000
+    files = "http://10.0.0.18:8888"
+
+    [log]
+    max_size = 30
+    max_age = 60
+    console_logging_enabled = true
+    file_logging_enabled = true
+    file = "./logs/foruda.log"
+kind: ConfigMap
+metadata:
+  name: foruda-config-toml

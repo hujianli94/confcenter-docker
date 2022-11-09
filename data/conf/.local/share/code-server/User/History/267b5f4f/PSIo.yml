@@ -1,0 +1,523 @@
+production: &base
+  ## Gitee settings
+  gitee:
+    ## Web server settings
+    host: gitee.co
+    hosts: ['git.oschina.net', 'gitee.co']
+    api_host: api.gitee.co
+    enterprise_web_domain: []
+    education_web_domain: []
+    education_api_domain: []
+    port: 80
+    https: true
+    use_https: true
+    site_name: "码云 - 开源中国"
+    solr_url: ""
+    email_from: Gitee <no-reply@git.oschina.net>
+    support_email: support@git.oschina.net
+    default_projects_limit: 1000
+    default_private_limit: 1000
+    signup_enabled: true          # default: false - Account passwords are not sent via the email if signup is enabled.
+    gitignore_path: /home/git/gitignore
+    #licenses_path: /home/git/licenses
+    #licenses_path: <%= Licensee::License.license_dir %>
+    private_assets_host:
+    pages_url:
+    new_enterprise_app_id: 4812
+    git_user: username
+    git_password: password
+    git_token: usertoken
+    lfs_token_secret: 'SECRETTS'
+    git_remote_fetch_queue: 500
+    git_local_fetch_queue: 500
+
+    distributed: true
+
+    # GPG Key support
+    gpg: true
+
+    # api access_token for ops
+    ops_token: 'd6667c3141'
+
+    # rime
+    rime:
+      enabled: true
+
+    # gpg white list
+    #  gitee use a Special user to manager gpg whitelist
+    #   Need to restore the commit information associated with this particular user
+    # when gpg_whitelist_administrator_id is nil, the gpg white list disabled
+    gpg_whitelist_administrator_id: nil
+
+    # assets_host
+    assets_host: "https://cn-assets.gitlife.com"
+
+    avatar_host: 'http://portrait.gitlife.com'
+
+    new_np_route: ''
+    files: "https://files.gitlife.com"
+
+    #sonar_url: sonar.oschina.net
+    codesafe_url: 'https://codescan.qianxin.com/api/facade/osc'
+    codesafe_public_key: ''
+    codesafe_private_key: ''
+    codesafe_authen: ''
+    codesafe_key_id:
+    codesafe_new_url: ''
+    codesafe_new_authen: ''
+
+    # REPOS_PATH MUST NOT BE A SYMLINK!!!
+    gitlab_shell_path: /home/git/gitlab-shell/
+    repos_path: /home/git/repositories/
+    hooks_path: /home/git/gitlab-shell/hooks/
+    native_hooks_path: /home/git/oscstudio/bin
+
+
+    # wechat show guide
+    wechat_show_guide:
+      show_count: 3
+      short_period: <%= 1.day %>
+      long_period: <%= 1.month %>
+    # mobile subdomain prefix
+    mobile_subdomain_prefix: 'm'
+
+    # Allow these applications access_token never expires
+    never_expired_app_ids: []
+
+    # all_about_git page need this wiki sort id
+    sort_id:
+
+    # use native hook
+    use_native_hook: false
+
+    # system oauth application used for generate personal access token
+    system_oauth_application_id:
+    # Gitee Go 生成次数限制 Token
+    gitee_go_appication_id: 5
+
+    # Git over HTTP
+    upload_pack: true
+    receive_pack: true
+
+    # If you use non-standard ssh port you need to specify it
+    # ssh_port: 22
+    raw_cache_path: /home/git/gitee/tmp/rawfiles
+
+    login_ssl: true
+    # order success to mail
+    order_success_email: []
+    baidu_translation: false
+
+    # google recaptcha v3
+    recaptcha:
+      site_key: ''
+      secret_key: ''
+
+    yunpian_second_verify:
+      repo_download_zip_use: true
+      repo_download_zip:
+        CaptchaId: ""
+        SecretId: ""
+        SecretKey: ""
+      login_captcha_use: false
+      login_captcha:
+        CaptchaId: ""
+        SecretId: ""
+        SecretKey: ""
+      second_verify_captcha_use: true
+      second_verify_captcha:
+        CaptchaId: ""
+        SecretId: ""
+        SecretKey: ""
+      self_service_captcha_use: true
+      self_service_captcha:
+        CaptchaId: ""
+        SecretId: ""
+        SecretKey: ""
+      enterprise_captcha:
+        CaptchaId: ""
+        SecretId: ""
+        SecretKey: ""
+
+  ## External issues trackers
+  issues_tracker:
+    # redmine:
+      ## If not nil, link 'Issues' on project page will be replaced with this
+      ## Use placeholders:
+      ##  :project_id        - Gitee project identifier
+      ##  :issues_tracker_id - Project Name or Id in external issue tracker
+      ##  project_url: "http://redmine.sample/projects/:issues_tracker_id"
+      ## If not nil, links from /#\d/ entities from commit messages will replaced with this
+      ## Use placeholders:
+      ##  :project_id        - Gitee project identifier
+      ##  :issues_tracker_id - Project Name or Id in external issue tracker
+      ##  :id                - Issue id (from commit messages)
+      ##  issues_url: "http://redmine.sample/issues/:id"
+
+  ## Gravatar
+  gravatar:
+    enabled: false                 # Use user avatar image from Gravatar.com (default: true)
+    # plain_url: "http://..."     # default: http://www.gravatar.com/avatar/%{hash}?s=%{size}&d=mm
+    # ssl_url:   "https://..."    # default: https://secure.gravatar.com/avatar/%{hash}?s=%{size}&d=mm
+
+  sendcloud_smtp:
+    address:              ''
+    port:                 25
+    user_name:            ''
+    password:             ''
+    xauthentication:       ''
+    openssl_verify_mode:  0
+  gitee_community_web:
+    url: 'http://community-web.placeholder_namespace:3000'
+  gitee_go:
+    xly_enterprise: 'gitee-com'
+    project_uuid: 'GiteeBackProject'
+    host_new: ''
+    host: ''
+
+  exception_smtp:
+    address:              'smtp.gitlife.com'
+    port:                 25
+    domain:               'git.oschina.net'
+    user_name:            'no-reply'
+    password:             ''
+    authentication:       'plain'
+    enable_starttls_auto: true
+    openssl_verify_mode:  'none'
+
+  osc_release_sync:
+    enabled: true
+    host: ''
+    token: ''
+
+  elasticsearch:
+    enabled: true
+    hosts: ['172.18.0.13:9200']
+  censor:
+    enable: false
+    public_application_enable: false
+    enable_processing: true
+  oschina_elastic:
+    url: ''
+    secret_token: ''
+  event_elastic:
+    enabled: true
+    host: 'http://escluster1:18080'
+  gitee_ums:
+    enabled: true
+    admin: 'http://common'
+    hosts: ['172.18.0.38']
+    app_key: ""
+    username: ""
+    password: ""
+  kafka_cluster:
+    hosts: ['kafka-0.kafka-headless.pub-comm.svc.cluster.local:9092', 'kafka-1.kafka-headless.pub-comm.svc.cluster.local:9092', 'kafka-2.kafka-headless.pub-comm.svc.cluster.local:9092']
+    username: "gitee-ums"
+    password: "ums123"
+    sasl_mechanism: 'sha256'
+  lfs:
+    token: 'ba2711d5c199fc1570577332d4b0ea2d'
+    host: https://lfs.gitlife.com
+  # 用户画像
+  persona:
+    enabled: true
+    host: 'http://192.168.2.56:8080'
+
+  project_contribution:
+    host: 'http://10.0.64.18:8003'
+    token: 'cluser_contribution427'
+
+  # 项目画像
+  project_exponent:
+    enabled: true
+    #host: 'http://192.168.2.56:9000'
+    host: 'http://172.18.0.20:9000'
+    token: 'jcradargitee328'
+
+  #
+  # 2. Auth settings
+  # ==========================
+  ## swagger settings
+
+  swagger:
+    client_id: 8ac7a94ff19ddb4b9d267d525c048e2845f589cf3b1e8d09ef2568ca63f74603
+    redirect_uri: 'https://gitlife.com/api/v5/swagger'
+    client_secret: c9210bdeed88d2abc2f9fcda6a843724904fe0296368fd4367b231a691e65756
+  enterprise_swagger:
+    client_id: c58596a0caf1e382279c490d9782eccfa3ec6bf9fa18b0371bafc2f7b1aa79df
+    redirect_uri: 'https://gitlife.com/api/v8/swagger'
+    client_secret: 23b4e09c0120ddde1ea4f4f42a3499301c7a5637d0afcb64733e313711107b5a
+    hidden_core_api: true
+
+  sensor:
+    enabled: false
+    server_url: ''
+
+  drc:
+    token: ''
+    post_url: ''
+    repo_post_url: ''
+    token_repo: ''
+    passive_aes_key: ""
+    passive_token: ""
+
+  pages_pub_key:
+    title: 'Pages@Gitee'
+    key:  ''
+  gitee_search_api:
+    host: 'http://10.0.0.15'
+    key: ''
+  baidu_search_code:
+    enabled: false
+    #host: 'http://106.12.38.27:8081/repo/event'
+    host: 'http://106.12.84.131:8082/repo/event'
+    key: ''
+  baidu_cloud_ai:
+    enabled: false
+    ak: ''
+    sk: ''
+  ishumei_ai:
+    enabled: false
+    accessKey: ''
+  apk_build:
+    deploy_key: ""
+  alipay_auth:
+    app_id: ''
+    app_private_key: ""
+
+
+  ## LDAP settings
+  ldap:
+    enabled: false
+    host: '_your_ldap_server'
+    base: '_the_base_where_you_search_for_users'
+    port: 636
+    uid: 'sAMAccountName'
+    method: 'ssl' # "ssl" or "plain"
+    bind_dn: '_the_full_dn_of_the_user_you_will_bind_with'
+    password: '_the_password_of_the_bind_user'
+  ## OmniAuth settings
+  omniauth:
+    # Allow login via Twitter, Google, etc. using OmniAuth providers
+    enabled: true
+
+    # CAUTION!
+    # This allows users to login without having a user account first (default: false).
+    # User accounts will be created automatically when authentication was successful.
+    allow_single_sign_on: true
+    # Locks down those users until they have been cleared by the admin (default: true).
+    block_auto_created_users: false
+    providers:
+  #
+  # 3. Paas provider settings
+  # ==========================
+  paas:
+    providers:
+  fosseye:
+    enabled: false
+    host: 'https://www.fosseye.com'
+  gitee_scan:
+    app_key: "gitee"
+    scanner_deploy_key: ""
+
+  kooder:
+    app_id: 10252
+    host: 'search1:8500'
+#
+  # 4. Advanced settings
+  # ==========================
+
+  # Gitee Satellites
+  satellites:
+    # Relative paths are relative to Rails.root (default: tmp/repo_satellites/)
+    path: /home/git/gitlab-satellites/
+
+  ## Backup settings
+  backup:
+    path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
+    # keep_time: 604800   # default: 0 (forever) (in seconds)
+
+  ## Gitee Shell settings
+  gitlab_shell:
+    # REPOS_PATH MUST NOT BE A SYMLINK!!!
+    home_path: /home/git/gitlab-shell/
+    repos_path: /home/git/repositories/
+    hooks_path: /home/git/gitlab-shell/hooks/
+
+    # Git over HTTP
+    upload_pack: true
+    receive_pack: true
+
+    # If you use non-standard ssh port you need to specify it
+    # ssh_port: 22
+
+  ## Git settings
+  # CAUTION!
+  # Use the default values unless you really know what you are doing
+  git:
+    bin_path: /usr/local/bin/git
+    # Max size of a git object (e.g. a commit), in bytes
+    # This value can be increased if you have very large commits
+    max_size: 5242880 # 5.megabytes
+    # Git timeout to read a commit, in seconds
+    timeout: 60
+  redis:
+    bin_path: /usr/local/bin/redis-cli
+    svn_event_host: 127.0.0.1
+  ## Team interfaces url settings , you must change the team host when you use a productive database
+  team:
+    host: 'http://team.oschina.net'
+  oschina:
+    host: 'www.oschina.net'
+    zb_host: 'zb.oschina.net'
+
+  sms:
+    enabled: false
+    captcha_url: "https://www.oschina.net/action/zbApi/sendVerifyCodeForGit"
+    change_pwd_notify_url: "https://www.oschina.net/action/zbApi/sendResetPwdSMSForGit"
+    token: ""
+  recommend:
+    enabled: true
+    data_url: 'http://172.18.0.20:9001/recomm_batch/'
+    token: 'jcHandlergitee328'
+  ci:
+    jenkins_server: 'http://192.168.2.41:8080'
+    ci_deploy_key: ''
+    download_indate: 2
+    ci_job_status:
+      enable: 1
+      disable: 0
+    trigger_type:
+      by_mamual: 0
+      by_day: 1
+      by_week: 2
+      by_month: 3
+      by_pr: 4
+      by_commit: 5
+    max_build_time: 5
+  apidoc_url: 'https://apidoc.gitlife.com:'
+  apidoc_domain: 'https://apidoc.gitlife.com'
+  apidoc_deploy_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHmg5Lk1r1Zs8jgllPXDa7vBLWdKA+mv2SvA7+U1GxL5"
+  use_upyun_images: false
+  upyun_images: &upyun
+    bucket: ''
+    operator: ''
+    password: ''
+    host: 'https://images.gitlife.com'
+  upyun_download_setting:
+    expiration_time: 300
+    secret: ''
+    host: ''
+  # 独立消息队列 NSQ
+  nsq:
+    nsqd_address: '192.168.2.58:4150'
+    nsqlookupd_address: '192.168.2.58:4160'
+  multi_email:
+    max_sum: 20
+  ruby_sentry_dsn: 'http://a4ac228dcfaa4a6aa0ecdc409a6b1d0e@106.12.42.156:9009/2'
+  verification_code:
+    expires_in: <%= 5.minutes %>
+  check_content_validate:
+    enabled: false
+  monitoring:
+    ip_whitelist:
+      - 192.168.0.0/16
+      - 10.0.0.0/16
+    prometheus:
+      metrics_enabled: true
+      # NOTE https://gitlife.com/oschina/dashboard?issue_id=I14JUF
+      multiproc_dir: /run/gitee/
+    unicorn_sampler_interval: 10
+    ruby_sampler_interval: 6
+    sidekiq_exporter:
+      enabled: true
+      address: 0.0.0.0
+      port: 8082
+    web_exporter:
+      enabled: true
+      address: 0.0.0.0
+      port: 8083
+  phone_validate:
+    enabled: false
+    action: [create, update]
+    model:
+      User:
+        attributes: [name, bio]
+      AttachFile:
+        attributes: [name, description]
+      DocNode:
+        attributes: [name]
+      Donate:
+        attributes: [donator_name, message]
+      Introduction:
+        attributes: [content]
+      Milestone:
+        attributes: [title, description]
+      Group:
+        attributes: [name, description]
+      Enterprise:
+        attributes: [name, description]
+      OauthApplication:
+        attributes: [name, description]
+      ProjectInfo:
+        attributes: [readme_content]
+      Project:
+        attributes: [name, description]
+      Release:
+        attributes: [title, description]
+      Tag:
+        attributes: [name]
+      ActsAsTaggableOn::Tag:
+        attributes: [name]
+      WikiData:
+        attributes: [content]
+      WikiInfo:
+        attributes: [name]
+      WikiSort:
+        attributes: [name]
+
+  gitaly:
+    enabled: true
+    port: 9999
+  blaze_archive:
+    enabled: true
+    token: "89510484-4f8d-4e6f-8813-9502d121bdce"
+    expires: 20
+  baidu_ocpc:
+    enabled: false
+    token: ""
+
+  tianyancha_api:
+    token: ''
+  enterprise_api_limit:
+    daily:
+      possible_names: 100
+
+  foruda:
+    enabled: true
+    host: 'http://foruda:4200'
+    auth_token: '4tMic9hRo6MQMT5iHsbQsh3KjfoBuz38'
+    applications:
+      private: ''
+      attach_file: ''
+      images: ''
+      avatar: '22bd5a96-a2c3-4e70-b855-be77780e2901'
+      logo: ''
+      tempfile: ''
+      apk: ''
+
+  giteeusercontent:
+    diagram_viewer_path: 'https://diagram-viewer.giteeusercontent.com'
+
+development:
+  <<: *base
+
+test:
+  <<: *base
+  issues_tracker:
+    redmine:
+      project_url: "http://redmine/projects/:issues_tracker_id"
+      issues_url: "http://redmine/:project_id/:issues_tracker_id/:id"
+
+staging:
+  <<: *base

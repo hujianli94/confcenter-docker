@@ -1,0 +1,16 @@
+server:
+  addr: 0.0.0.0:8080
+  tls:
+    enabled: false
+    cert: certs/cert.pem
+    key: certs/key.pem
+
+rootPath: /data
+
+dir:
+  path: /share
+  readonly: false
+  auth:
+    enabled: true
+    username: webdav
+    password: "$2a$10$XLlxQczeVSN/IlnqLTpBAOqVbREZIMBcdgAgBUXqbvuYx4b5hkyEG"

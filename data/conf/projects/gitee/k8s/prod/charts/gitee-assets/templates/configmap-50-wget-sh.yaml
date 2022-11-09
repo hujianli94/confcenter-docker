@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  50-genconf.sh: |
+    wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/k8s/prod/conf/nginx/ -P /etc/nginx
+    wget -q -np -nH --mirror --no-if-modified-since -e robots=off --default-page=gitee.webdav.index.html --reject="gitee.webdav.index.html*" --cut-dirs=6 --http-user=webdav --http-password=123123 https://webdavd.autom.studio/conf/gitee/share/conf/gnupg/gpgpub/ -P /home/git/gpgpub
+    grep -lr placeholder_namespace /etc/nginx|xargs -I {} sed -i "s#placeholder_namespace#{{ .Release.Namespace }}#g" {}
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+kind: ConfigMap
+metadata:
+  name: nginx-50-genconf-sh

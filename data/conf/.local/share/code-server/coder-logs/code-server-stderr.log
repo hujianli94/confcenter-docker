@@ -1,0 +1,153 @@
+Error: EACCES: permission denied, mkdir '/home/coder/.local/share/code-server/User/globalStorage'
+    at Object.mkdirSync (node:fs:1349:3)
+    at /usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1812
+    at Array.forEach (<anonymous>)
+    at S (/usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1777)
+    at h (/usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1987)
+    at CodeServerRouteWrapper.<anonymous> (/usr/lib/code-server/out/node/routes/vscode.js:134:46)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/lib/code-server/out/node/routes/vscode.js:24:58) {
+  errno: -13,
+  syscall: 'mkdir',
+  code: 'EACCES',
+  path: '/home/coder/.local/share/code-server/User/globalStorage'
+}
+Error: EACCES: permission denied, mkdir '/home/coder/.local/share/code-server/User/History'
+    at Object.mkdirSync (node:fs:1349:3)
+    at /usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1812
+    at Array.forEach (<anonymous>)
+    at S (/usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1777)
+    at h (/usr/lib/code-server/lib/vscode/out/vs/server/node/server.main.js:174:1987)
+    at CodeServerRouteWrapper.<anonymous> (/usr/lib/code-server/out/node/routes/vscode.js:134:46)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/lib/code-server/out/node/routes/vscode.js:24:58) {
+  errno: -13,
+  syscall: 'mkdir',
+  code: 'EACCES',
+  path: '/home/coder/.local/share/code-server/User/History'
+}
+[06:55:33] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: Cannot find module '../build/Release/keytar.node'
+Require stack:
+- /usr/lib/code-server/lib/vscode/node_modules/keytar/lib/keytar.js
+- /usr/lib/code-server/lib/vscode/out/bootstrap-amd.js
+- /usr/lib/code-server/out/node/util.js
+- /usr/lib/code-server/out/node/cli.js
+- /usr/lib/code-server/out/node/entry.js
+[06:58:23] [172.20.0.5][ec6c5796][ManagementConnection] Unknown reconnection token (never seen).
+[03:51:58] [172.20.0.5][f1e86a48][ManagementConnection] Unknown reconnection token (never seen).
+[03:51:58] [172.20.0.5][d5905a48][ExtensionHostConnection] Unknown reconnection token (never seen).
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[05:55:39] RequestStore#acceptReply was called without receiving a matching request 28
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 29
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 30
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 31
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 32
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 33
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 34
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 35
+[05:55:40] RequestStore#acceptReply was called without receiving a matching request 36
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[07:14:24] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20) {
+  errno: -104,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 37
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 38
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 39
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 40
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 41
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 42
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 43
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 44
+[08:50:41] RequestStore#acceptReply was called without receiving a matching request 45
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[09:29:41] Using the in-memory credential store as the operating system's credential store could not be accessed. Please see https://aka.ms/vscode-server-keyring on how to set this up. Details: Cannot find module '../build/Release/keytar.node'
+Require stack:
+- /usr/lib/code-server/lib/vscode/node_modules/keytar/lib/keytar.js
+- /usr/lib/code-server/lib/vscode/out/bootstrap-amd.js
+- /usr/lib/code-server/out/node/util.js
+- /usr/lib/code-server/out/node/cli.js
+- /usr/lib/code-server/out/node/entry.js
+[09:33:11] Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:217:20) {
+  errno: -104,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[08:49:33] RequestStore#acceptReply was called without receiving a matching request 172
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 173
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 174
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 175
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 176
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 177
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 178
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 179
+[08:49:34] RequestStore#acceptReply was called without receiving a matching request 180
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
+[02:25:56] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/coder/projects/, real: /home/coder/projects)
+[02:26:04] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/coder/projects/, real: /home/coder/projects)
+[02:26:10] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[03:00:49] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[03:09:45] [File Watcher (parcel)] correcting a path to watch that seems to be a symbolic link or wrong casing (original: /home/, real: /home)
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 235
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 236
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 237
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 238
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 239
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 240
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 241
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 242
+[03:09:46] RequestStore#acceptReply was called without receiving a matching request 243
+[03:09:48] RequestStore#acceptReply was called without receiving a matching request 244
+[03:09:48] RequestStore#acceptReply was called without receiving a matching request 245
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 246
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 247
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 248
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 249
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 250
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 251
+[03:09:49] RequestStore#acceptReply was called without receiving a matching request 252
+Failed login attempt {"xForwardedFor":"113.110.192.110","remoteAddress":"172.20.0.5","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36","timestamp":1667960723}
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/usr/lib/code-server/lib/vscode/out/bootstrap.js:1:370)
+    at process.emit (node:events:527:28)
