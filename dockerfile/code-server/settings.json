@@ -1,0 +1,49 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "git.enableSmartCommit": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs":"active",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  // 代码编辑区域大小设置 20
+  "editor.fontSize": 20,
+  // 终端字体大小设置 18
+  "terminal.integrated.fontSize": 18,
+  "editor.mouseWheelZoom": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [
+        120,
+    ],
+  "workbench.colorCustomizations": {
+      "editorRuler.foreground": "#ff4081"
+  },
+  "editor.suggestSelection": "first",
+  "files.autoGuessEncoding": true,
+  // 光标离开编辑区域 1000ms 自动保存
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 1000,
+  "terminal.integrated.inheritEnv": false,
+  "vetur.experimental.templateInterpolationService": true,
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "redhat.telemetry.enabled": true,
+  "workbench.colorTheme": "Default Dark+",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
+}

@@ -1,0 +1,60 @@
+---
+version: '3.9'
+
+services:
+  code:
+    image: hub.gitee.com/autom-studio/coder-server:v4.13.0
+    container_name: "code"
+    hostname: code
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/home/coder/workspace/
+    ports:
+      - "8888:8080"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    networks:
+      - proxy
+
+  webdavd-conf:
+    image: hub.gitee.com/autom-studio/nginx-webdavd:v1.0.0 
+    container_name: "webdavd-conf"
+    hostname: webdavd-conf
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./conf/conf/:/usr/local/nginx/conf
+      - ./data/conf:/usr/local/nginx/html:ro
+    ports:
+      - "8801:8080"
+    networks:
+      - proxy
+
+
+  webdavd-share:
+    image: hub.gitee.com/autom-studio/nginx-webdavd:v1.0.0 
+    container_name: "webdavd-share"
+    hostname: webdavd-share
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./conf/share/:/usr/local/nginx/conf
+      - ./data/share:/usr/local/nginx/html
+    ports:
+      - "8802:8080"
+    networks:
+      - proxy
+
+
+networks:
+  proxy:
+    external: true
+    name: nginx_proxy
+
